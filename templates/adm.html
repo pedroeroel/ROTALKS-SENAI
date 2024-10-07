@@ -1,0 +1,76 @@
+{% extends 'pattern.html' %}
+
+{% block pagename %}Administrator{% endblock %}
+
+{% block content %}
+
+<h2 class="text-light my-4 fs-2">Administrator Tools</h2>
+
+<div class="adm container flex-column mx-5 px-5 w-100 justify-content-center d-flex">
+    <div class="border p-5 text-light border-1 mb-5 rounded-5 d-flex flex-wrap row">
+        <h2 class="w-100">User List</h2>
+        <table class="my-2 border-1 border users-table p-2">
+            <thead>
+                <tr class="border border-1">
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">Name</th>
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">Email</th>
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if not userlist %}
+                <tr class="border border-1">
+                    <td colspan="3">There is no users registered!</td>
+                </tr>
+                {% else %}
+                {% for user in userlist %}
+
+                <tr class="border border-1">
+                    <td class="border border-1 text-center">{{ user[1] }}</td>
+                    <td class="border border-1 text-center">{{ user[2] }}</td>
+                    <td class="d-flex justify-content-evenly border border-1 text-center">
+                        <a class=" fw-bold" href="/edit-user/{{ user[0] }}">Edit</a>
+                        <a class="link-danger fw-bold" href="/delete-user/{{ user[0] }}" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+
+            </tbody>
+        </table>
+        <a class="" href="newuser"><button class="bt-newuser bg-transparent border border-1 text-light rounded-5 mt-4 p-2">New User</button></a>
+    </div>
+    <div class="border p-5 text-light border-1 mb-5 rounded-5 d-flex flex-wrap row">
+        <h2 class="w-100">Post List</h2>
+        <table class="w-100 h-100">
+            <thead>
+                <tr class="border border-1">
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">USER</th>
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">POST</th>
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">DATE</th>
+                    <th class="text-center border-top-0 border-bottom-0 border-1 border">ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if not userlist %}
+                <tr class="border border-1">
+                    <td colspan="4">There is no posts in the blog!</td>
+                </tr>
+                {% else %}
+                {% for post in posts %}
+                <tr class="border border-1">
+                    <td class="border border-1 text-center">{{ post[4] }}</td>
+                    <td class="border border-1 text-center">{{ post[2] }}</td>
+                    <td class="border border-1 text-center">{{ post[3] }}</td>
+                    <td class="border border-1 text-center">
+                        <a class="link-danger fw-bold" href='/delete-post/{{ post[0] }}' onclick='return confirm("Are you sure you want delete this post?");'>Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'pattern.html' %}
+
+{% block pagename %}Home{% endblock %}
+
+{% block navitems %}
+
+    {% if login %}
+
+        <li class="nav-link fw-medium link-light"><a href="/newpost">New Post</a></li>
+        <li class="nav-link fw-medium link-light"><a href="/logout">Logout</a></li>
+
+        {% if adm %}
+
+        <li class="nav-link fw-medium link-light"><a href="/adm">Admin Tools</a></li>
+
+        {% endif %}
+
+    {% else %}
+        <li class="nav-link fw-medium link-light"><a href="/login">Login</a></li>
+    {% endif %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="container m-5 h-100 w-100 d-flex flex-column justify-content-center align-items-center">
+
+        {% if not posts %}
+            <h2 class="text-light">There is no posts in the blog!</h2>
+        {% else %}
+        
+        {% for post in posts %}
+            <div class="border border-1 rounded-4 py-3 w-75 px-4 text-light h-50 d-flex flex-column post-container">
+                <div class="text-start weight-bold fw-medium fs-6 post-author">{{post.author}}</div>
+                <div class="post-content opacity-75 mb-4 mt-2 fw-normal fs-6">{{post.content}}</div>
+                <div class="post-date mt-2 w-100 opacity-75">{{post.date}}</div>
+            {% if userId == post.userId %}
+                <p class="w-100 mt-1 delete-post">
+                    <a class="link-danger" href="delete-post/{{post.postId}}" onclick="return confirm('Are you sure to delete this post?')">Delete Post</a>
+                </p>
+            {% endif %}
+
+            </div>
+        {% endfor %}
+
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'pattern.html' %}
+
+{% block pagename %}Login{% endblock %}
+
+{% block content %}
+
+<div id="login" class="w-100 mt-5 d-flex flex-column justify-content-center align-items-center">
+    <form class="p-0 pb-2  text-light border border-1 rounded-5" method="post" action="/access">
+        <h2 class="fw-bold fs-2">Sign In</h2>
+        <div class=" w-75 text-light form-email">
+            <input class="border-light bg-transparent text-light rounded-5 p-2 w-100" placeholder="Your email..." type="email" name="email" id="email" required>
+        </div>
+        <div class="w-75 text-light form-password">
+            <input class="border-light bg-transparent text-light rounded-5 p-2 w-100" placeholder="Your password..." type="password" name="password" id="password" required>
+        </div>
+
+        {% if errormsg %}
+        <p class="error">{{ errormsg }}</p>
+        {% endif %}
+
+        <button class="border-light rounded-5 text-light w-75" type="submit">Sign In</button>
+
+    </form>
+</div>
+
+{% endblock %}

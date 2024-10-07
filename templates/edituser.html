@@ -1,0 +1,24 @@
+{% extends 'pattern.html' %}
+
+{% block pagename %}Edit User{% endblock %}
+
+{% block content %}
+
+<div class="newuser">
+    <form action="/update-user" method="post">
+        <h2>Edit User Register</h2>
+
+        <label for="name">Name:</label>
+        <input type="text" name='name' maxlength='100' required value="{{ user[1] }}">
+        
+        <label for="email">Email:</label>
+        <input type="email" name='email' maxlength='100' required value="{{ user[2] }}">
+
+        <label for="password">Password:</label>
+        <input type="text" name='password' required value="{{ user[3] }}">
+
+        <button type="submit">Update</button>
+
+    </form>
+    </div>
+    {% endblock %}

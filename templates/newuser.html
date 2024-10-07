@@ -1,0 +1,28 @@
+{% extends 'pattern.html' %}
+
+{% block pagename %}New User{% endblock %}
+
+{% block content %}
+
+<div class="newuser">
+    <form action="/create-user" method="post">
+        <h2>New User Creation</h2>
+        
+        <label for="nome">Name:</label>
+        <input type="text" name="name" id="" maxlength="100" required="required">
+        
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="" maxlength="100" required="required">
+
+        {% if errormsg %}
+            <p style="color: white; background-color: red; text-align: center;">{{errormsg}}</p>
+        {% endif %}
+        
+        <label for="password">Password:</label>
+        <input type="text" name="password" id="" required="required">
+        
+        <button type="submit">Create User</button>
+    </form>
+</div>
+
+{% endblock %}

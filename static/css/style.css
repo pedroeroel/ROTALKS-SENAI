@@ -1,0 +1,326 @@
+/* RESET AND BASICS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    transition-duration: .2s;
+    /* border: 1px solid blue; */
+}
+
+a:active, a:visited, a:link, a:hover {
+    text-decoration: none;
+}
+
+/* SOURCES */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Satisfy&display=swap');
+
+:root {
+    --dark-background: hsl(0, 0%, 16%);
+}
+
+/* MAIN */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-navbar{
+    z-index: 2;
+    top: 7.5%;
+    opacity: 1;
+    backdrop-filter: blur(2px);
+}
+
+header div{
+    height: 10vh;
+    box-shadow: 0 0 1vw hsl(0, 0%, 30%);
+}
+
+header div h1 a img {
+    filter: drop-shadow(0 0 7.5px hsla(0, 0%, 50%));
+}
+
+main {
+    z-index: 1;
+    flex: 1;
+    height: 80vh;
+    min-height: 80vh;
+}
+
+footer {
+    height: 10vh;
+}
+
+ul li a {
+    color: rgba(255, 255, 255, 0.737);
+    transition-duration: .2s;
+}
+
+ul li a:hover {
+    color: rgba(255, 255, 255, 0.934);
+    transition-duration: .2s;
+}
+
+.post-container {
+    box-shadow: 0 0 1vw hsl(0, 0%, 20%);
+    backdrop-filter: blur(5px);
+    margin: 2vh auto;
+}
+
+.post-date {
+    font-size: 0.8em;
+}
+
+@media (max-width: 600px) {
+    header {
+        height: 15vh;
+        font-size: 20px;
+    }
+    .post-container {
+        width: 90%;
+    }
+
+    #newpost {
+        height: 20vh;
+    }
+
+    #newpost form {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    #newpost form textarea {
+        width: 95%;
+    }
+}
+
+#login {
+    min-height: 70vh;
+}
+
+#login form {
+    min-width: 40vw;
+    height: 50vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2vh;
+}
+
+#login form label {
+    font-size: 2vh;
+    margin-right: 2vh;
+    font-weight: 600;
+}
+
+#login form #email, #login form #password {
+    width: 15vw;
+    height: 7.5vh;
+    resize: none;
+    font-size: 2vh;
+}
+
+#login form button {
+    background-color: hsla(0, 0%, 100%, 0);
+    height: 5vh;
+    cursor: pointer;
+}
+
+#login form button:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    transition: .2s;
+}
+
+#newpost{
+    width: 100%;
+    min-height:70vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#newpost form {
+    width: 30%;
+    height: 50vh;
+    background: #4747bd;
+    color: #fff;
+    box-shadow: 5px 5px 10px gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#newpost form label {
+    font-size: 2vh;
+    font-weight: 600;
+    text-align: center;
+}
+
+#newpost form textarea {
+    width: 90%;
+    height: 10vh;
+    resize: none;
+    border: 2px solid #7878f6;
+    border-radius: 0.5vh;
+    padding: 1vh;
+    font-family: Arial;
+    font-size: 1.5vh;
+}
+
+#newpost form button {
+    width: 90%;
+    height: 3vh;
+    background: #fff;
+    border: none;
+    color: #4747bd;
+    border-radius: 0.5vh;
+    font-size: 1.5vh;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#newpost form button:hover {
+    background-color: #4747bd;
+    color: #fff;
+    transition: .2s;
+    border: 2px solid #fff;
+}
+
+#menu {
+    height: 5vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+}
+
+#menu .button {
+    width: 5vw;
+    height: 2.5vh;
+    background: #4747bd;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#menu .button:hover {
+    text-decoration: underline;
+}
+
+.error404 {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+    font-size: 2em;
+    padding: 20px;
+}
+
+#adm {
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 0;
+}
+
+.users-table {
+    width: 100%;
+}
+
+
+#adm-users button {
+    padding: 5px 30px;
+    height: 30px;
+    margin: 20px 0;
+    border: none;
+    border-radius: 20px;
+    background-color: #006400;
+    color: #fff;
+}
+
+#adm-users button:hover {
+    background-color: #3da43d;
+    color: #fff;
+    cursor: pointer;
+}
+
+#adm-posts {
+    width: 50%;
+    min-height: 75vh;
+    padding: 10px;
+}
+
+#newuser {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+#newuser form {
+    width: 30%;
+    background-color: #4747bd;
+    height: 70vh;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-flow: column nowrap;
+    color: #fff;
+}
+
+#newuser form input {
+    margin: 10px 0;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+#newuser button {
+    padding: 5px 30px;
+    height: 30px;
+    margin: 20px 0;
+    border-radius: 20px;
+    border: none;
+    background: #006400;
+    color: #fff;
+}
+
+#newuser button:hover {
+    background-color: #3da43d;
+    cursor: pointer;
+}
+
+#adm-posts {
+    width: 50%;
+    min-height: 75vh;
+    padding: 20px;
+}
+
+#adm-posts table {
+    width: 100%;
+}
+
+#adm-posts table, td, th {
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+#delete-post {
+    display: flex;
+    justify-content: end;
+}

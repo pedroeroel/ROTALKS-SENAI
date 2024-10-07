@@ -1,0 +1,16 @@
+{% extends 'pattern.html' %}
+
+{% block pagename %}New Post{% endblock %}
+
+{% block content %}
+
+<div id="newpost">
+    <form action="/createpost" method="post">
+        <label>Hi {{ user[1] }}!<br>What do you want to post?</label>
+        <input type="hidden" value="{{ user[0] }}" name="userId" />
+        <textarea name="content"></textarea>
+        <button type="submit">Post</button>
+    </form>
+</div>
+
+{% endblock %}
