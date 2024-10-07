@@ -138,27 +138,6 @@ ul li a:hover {
     transition: .2s;
 }
 
-#newpost{
-    width: 100%;
-    min-height:70vh;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#newpost form {
-    width: 30%;
-    height: 50vh;
-    background: #4747bd;
-    color: #fff;
-    box-shadow: 5px 5px 10px gray;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
 #newpost form label {
     font-size: 2vh;
     font-weight: 600;
