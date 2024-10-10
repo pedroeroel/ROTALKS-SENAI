@@ -4,12 +4,12 @@
 
 {% block content %}
 
-<div class="text-light border border-1 rounded-5 w-50 h-75 my-5 d-flex flex-column flex-wrap justify-content-start p-5" id="newpost">
+<div class="text-light border border-1 rounded-5 w-50 my-5 h-100 d-flex fs-6 flex-wrap justify-content-center p-5" id="newpost">
     <form class="w-100" action="/createpost" method="post">
         <label class="w-100 text-start mb-5">Hi {{ user[1] }}!<br>What do you want to post?</label>
         <input class="" type="hidden" value="{{ user[0] }}" name="userId" />
-        <textarea class="w-100 bg-transparent border-1 border text-light p-5 h-75 rounded-5 mb-5" name="content"></textarea>
-        <button class="w-75 h-25 rounded-5" type="submit">Post</button>
+        <textarea class="w-100 fs-6 bg-transparent border-1 border text-light p-4 h-50 rounded-5 mb-5" name="content"></textarea>
+        <button class="w-50 rounded-5 border border-1 mb-3" type="submit">Post</button>
     </form>
 </div>
 

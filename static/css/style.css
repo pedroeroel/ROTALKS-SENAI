@@ -138,41 +138,22 @@ ul li a:hover {
     transition: .2s;
 }
 
-#newpost form label {
-    font-size: 2vh;
-    font-weight: 600;
-    text-align: center;
-}
-
 #newpost form textarea {
-    width: 90%;
-    height: 10vh;
     resize: none;
-    border: 2px solid #7878f6;
-    border-radius: 0.5vh;
-    padding: 1vh;
-    font-family: Arial;
     font-size: 1.5vh;
 }
 
 #newpost form button {
-    width: 90%;
-    height: 3vh;
-    background: #fff;
-    border: none;
-    color: #4747bd;
+    height: 5vh;
     border-radius: 0.5vh;
-    font-size: 1.5vh;
-    font-weight: 600;
     cursor: pointer;
+    color: var(--dark-background);
 }
 
 #newpost form button:hover {
-    background-color: #4747bd;
+    background-color: hsla(194, 100%, 50%, 0.1);
     color: #fff;
     transition: .2s;
-    border: 2px solid #fff;
-}
 
 #menu {
     height: 5vh;
