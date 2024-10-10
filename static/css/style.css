@@ -154,6 +154,7 @@ ul li a:hover {
     background-color: hsla(194, 100%, 50%, 0.1);
     color: #fff;
     transition: .2s;
+}
 
 #menu {
     height: 5vh;
